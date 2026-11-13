@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+
+    <header>
+        <h1>🏢 Employee Management System</h1>
+        <p>Manage Your Employees Easily</p>
+    </header>
+
+    <main class="container">
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Total Employees</h3>
+                <p id="totalEmployees">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Salary</h3>
+                <p id="totalSalary">₹0</p>
+            </div>
+        </div>
+
+        <section class="form-box">
+            <h2>➕ Employee Registration</h2>
+
+            <form id="employeeForm">
+
+                <input type="text" id="name"
+                    placeholder="Employee Name" required>
+
+                <input type="text" id="empid"
+                    placeholder="Employee ID" required>
+
+                <input type="email" id="email"
+                    placeholder="Email Address" required>
+
+                <input type="tel" id="phone"
+                    placeholder="Phone Number" required>
+
+                <select id="department" required>
+                    <option value="">Select Department</option>
+                    <option value="IT">IT</option>
+                    <option value="HR">HR</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                </select>
+
+                <input type="text" id="designation"
+                    placeholder="Designation" required>
+
+                <input type="number" id="salary"
+                    placeholder="Monthly Salary (₹)"
+                    min="1" step="0.01" required>
+
+                <button type="submit" id="submitBtn">
+                    Add Employee
+                </button>
+
+                <button type="button" id="cancelBtn"
+                    class="cancel" hidden onclick="cancelEdit()">
+                    Cancel Edit
+                </button>
+
+            </form>
+        </section>
+
+        <section class="table-box">
+
+            <div class="table-heading">
+                <h2>📋 Employee Details</h2>
+
+                <input type="text" id="search"
+                    placeholder="🔍 Search employee...">
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Department</th>
+                            <th>Designation</th>
+                            <th>Salary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="employeeTable"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Employee Management System</p>
+    </footer>
+
+    <script src="employee.js"></script>
+</body>
+</html>
